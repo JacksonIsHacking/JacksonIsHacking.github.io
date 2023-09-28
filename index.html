@@ -1,1 +1,350 @@
+<html lang="en"><head><script src="chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/pageScripts/dashlane-tiresias-page-script.js" id="dashlane_tiresias"></script><script src="chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/pageScripts/dashlane-webauthn-page-script.js" id="dashlane_webauthn" name="forward_webauthn_ready"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Xware">
+    <meta property="og:description" content="Xware is your provider for various Cheats!">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1146551971780763669/1153788383169105971/logo-discord-icone-png-violet-removebg-preview.png">
+    <meta property="og:url" content="https://xware.pages.dev/">    
+    <meta name="theme-color" content="#6a00b0">
+    <meta name="msapplication-TileColor" content="#6a00b0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="particles.js"></script>
+    <title>xware</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1c34;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
 
+
+
+
+
+        .header {
+            animation: slide-in 1s ease-out;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 15px;
+            margin: 25px auto;
+            max-width: 450px;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background: rgba(40, 45, 72, 0.28);
+            /*border-radius: 16px;*/
+            backdrop-filter: blur(2.4px);
+            -webkit-backdrop-filter: blur(2.4px);           
+            position: relative; /* Hinzugefügt */ 
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 25px; 
+        }
+
+        .logo img {
+            max-width: 100px;
+            max-height: 40px; 
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .header-links h1:hover{
+            transform: scale(1.05); 
+        }
+               
+
+
+
+      
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .download-item {
+            /*background-color: rgba(39,45,72,255);*/
+            border-radius: 11px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative; 
+            /*box-shadow: 0 0 10px #312d2d;*/
+            background: rgba(40, 45, 72, 0.28);
+            /*border-radius: 16px;*/
+            backdrop-filter: blur(2.4px);
+            -webkit-backdrop-filter: blur(2.4px);
+        }
+
+        .download-item img {
+            max-height: 150px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .download-item h2 {
+            font-size: 24px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .download-item p {
+            color: #999;
+            font-size: 14px;
+        }
+        .download-item h2 {
+            font-size: 24px;
+        }      
+
+        .download-button {
+            background-color: #6958bf;
+            color: #fff;
+            border: none;
+            padding: 10px 100px;
+            font-size: 18px;
+            border-radius: 5px;
+            /*border-color: #ffffff;*/
+            border-width: 2px;
+            /*border-style: solid;*/
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            /*box-shadow: 0 0 10px #6a00b0;*/
+        }
+        @media screen and (max-width: 768px) {
+            .download-button {
+                padding: 10px 80px; 
+                font-size: 14px; 
+            }
+        }
+        .download-button:hover {
+            /*background-color: #49006a;*/
+            transform: scale(1.05); 
+        }
+
+        .download-item:hover {
+            transform: scale(1.05); 
+        }
+
+        .patched-icon {
+            background-color: #ff0202;
+            color: #fff;
+            padding: 2px 50px;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #ff0202;
+            text-align: center;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .new-icon {
+            background-color: #00aa25;
+            color: #fff;
+            padding: 2px 50px;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00aa25;
+            text-align: center;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.06);
+            }
+        }
+
+
+        @keyframes slide-in {
+            0% {
+                top: -50px;
+            }
+            40% {
+                top: 20px;
+            }
+            70% {
+                top: 10px;
+            }
+            100% {
+                top: 15px;
+            }
+        }
+
+
+              
+    </style>
+</head>
+<body>
+    <div id="particles-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1104" height="955"></canvas></div>
+    <div class="header">
+        <div class="logo-bar"></div>
+        <div class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153788383169105971/logo-discord-icone-png-violet-removebg-preview.png" alt="Xware Logo">
+            <h1>Xware</h1>
+        </div>
+        <div class="header-links">
+            <a class="h1" href="discord.html" target="_blank">Discord</a>
+            <a class="h2" href="telegram.html" target="_blank">Telegram</a>
+        </div>
+    </div>   
+    <div class="container">
+        <div class="download-item">
+            
+            <img src="https://cdn.discordapp.com/attachments/1145391900791160975/1156656062477389956/photoeffekte.com__final_285642965758502546_.jpg?ex=6515c366&amp;is=651471e6&amp;hm=07dd45b102d27a5552a356b837d446e3a707276f4c8a3255c2ed9235a43ce145&amp;" alt="image">
+            <h2>Nitro Codes</h2>
+            <p></p>
+            <p></p>
+            <div class="new-icon">Fresh | 27/09</div>
+            <a href="https://cdn.discordapp.com/attachments/1145391900791160975/1156656255457308784/nitro_codes.txt?ex=6515c394&amp;is=65147214&amp;hm=328dfe92331b95bb30b7bbaa2093c656d48bba703fc82a457cf2b1c569a92b78&amp;" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>         
+        <div class="download-item">
+            
+            <img src="https://cdn.discordapp.com/attachments/1145391900791160975/1156606789115191428/maxresdefault_9.jpg?ex=65159583&amp;is=65144403&amp;hm=a153928e2bc2cdd8c78085d15595c960decceb0904e1b3e52649965329715e2f&amp;" alt="image">
+            <h2>Krunker Menu</h2>
+            <p></p>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/krunkerio-cheat" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>         
+        <div class="download-item">
+            
+            <img src="https://cdn.discordapp.com/attachments/1145391900791160975/1155876197281038499/image.png" alt="image">
+            <h2>Reply Spammer</h2>
+            <p></p>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://workupload.com/file/c75Ga3fmJAV" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>         
+        <div class="download-item">
+            
+            <img src="https://cdn.discordapp.com/attachments/1145391900791160975/1155455275432685619/Screenshot_11.png" alt="image">
+            <h2>Nuke Tool</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/xware-nuker-2023" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>        
+        <div class="download-item">
+            
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1155057298578874458/weby.png" alt="image">
+            <h2>Webhook Spammer</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-hub.net/963225/discord-webhook-spammer" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>        
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1154050041091211355/16608953_soundpadcrack_png3547db585112e516345d9756ba339ea0.png" alt="image">
+            <h2>SoundPad</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-target.net/963225/soundpad" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>          
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1154503956408582185/maxresdefault_8.jpg" alt="image">
+            <h2>Photoshop</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/photoshop" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>          
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153344232858329219/maxresdefault_5.jpg" alt="image">
+            <h2>Premiere Pro</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-hub.net/963225/premiere-pro-2020" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>
+        
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153340988132167751/maxresdefault_4.jpg" alt="image">
+            <h2>Spectral Menu</h2>
+            <p></p>
+            <div class="patched-icon">Patched</div>
+            <a href="https://link-center.net/963225/spectral-engine-gta5" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div> 
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153328394294014083/8umswLNJdIE-HD.jpg" alt="image">
+            <h2>Osiris Cheat</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/xware-csgo-cheat" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>                                          
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153329406954192916/maxresdefault.jpg" alt="image">
+            <h2>Storm Osiris</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-hub.net/963225/storm-csgo-config" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>         
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153328406570733578/maxresdefault_1.jpg" alt="image">
+            <h2>Cheatsquad Injector</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/download-injector-xware" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div> 
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153330081012400188/maxresdefault_2.jpg" alt="image">
+            <h2>mm2 Script</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/roblox-mm2-cheat" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>         
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1153785066070216734/maxresdefault_6.jpg" alt="image">
+            <h2>Roblox Executor</h2>
+            <p></p>
+            <div class="patched-icon">Patched</div>
+            <a class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div> 
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1152872052559183892/1152903519695798354/oie_A2hqCI0DqnFi.png" alt="image">
+            <h2>Spammer</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://link-center.net/963225/discord-message-spammer" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>
+        <div class="download-item">
+            <img src="https://cdn.discordapp.com/attachments/1146551971780763669/1154048927293780060/maxresdefault_7.jpg" alt="image">
+            <h2>Zuhn Osiris</h2>
+            <p></p>
+            <div class="new-icon">Working</div>
+            <a href="https://direct-link.net/963225/zuhns-osiris-config" class="download-button"><i class="fas fa-download" style="margin-right: 5px;"></i>Download</a>
+        </div>                                     
+    </div>
+    <script src="particles.min.js"></script>
+    <script src="app.js"></script>
+<!-- Cloudflare Pages Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;db790c269e4d4632ba7c5d14ac0308de&quot;}"></script><!-- Cloudflare Pages Analytics -->
+
+</body></html>
