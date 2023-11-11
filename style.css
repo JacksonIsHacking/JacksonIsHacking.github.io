@@ -1,0 +1,183 @@
+  body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1c34;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+
+
+        .header {
+            animation: slide-in 1s ease-out;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 15px;
+            margin: 25px auto;
+            max-width: 450px;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background: rgba(40, 45, 72, 0.28);
+            backdrop-filter: blur(2.4px);
+            -webkit-backdrop-filter: blur(2.4px);           
+            position: relative; 
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 25px; 
+        }
+
+        .logo img {
+            max-width: 100px;
+            max-height: 40px; 
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .header-links h1:hover{
+            transform: scale(1.05); 
+        }
+               
+
+
+
+      
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .download-item {
+            border-radius: 11px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative; 
+            background: rgba(40, 45, 72, 0.28);
+            backdrop-filter: blur(2.4px);
+            -webkit-backdrop-filter: blur(2.4px);
+        }
+
+        .download-item img {
+            max-height: 150px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .download-item h2 {
+            font-size: 24px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .download-item p {
+            color: #999;
+            font-size: 14px;
+        }
+        .download-item h2 {
+            font-size: 24px;
+        }      
+
+        .download-button {
+            background-color: #6958bf;
+            color: #fff;
+            border: none;
+	    margin: 10;
+            padding: 10px 100px;
+            font-size: 18px;
+            border-radius: 5px;
+            border-width: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        @media screen and (max-width: 768px) {
+            .download-button {
+                padding: 10px 80px; 
+                font-size: 14px; 
+            }
+        }
+        .download-button:hover {
+            transform: scale(1.05); 
+        }
+
+        .download-item:hover {
+            transform: scale(1.05); 
+        }
+
+        .patched-icon {
+            background-color: #ff0202;
+            color: #fff;
+            padding: 2px 50px;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #ff0202;
+            text-align: center;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .new-icon {
+            background-color: #00aa25;
+            color: #fff;
+            padding: 2px 50px;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00aa25;
+            text-align: center;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.06);
+            }
+        }
+
+
+        @keyframes slide-in {
+            0% {
+                top: -50px;
+            }
+            40% {
+                top: 20px;
+            }
+            70% {
+                top: 10px;
+            }
+            100% {
+                top: 15px;
+            }
+        }
