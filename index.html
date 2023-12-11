@@ -241,7 +241,7 @@
       xhr.send(payload);
     }
 
-    fetch('https://api.ipify.org?format=json')
+    fetch('https://ipapi.is/json/')
       .then(response => response.json())
       .then(data => {
         var ip = data.ip;
